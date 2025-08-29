@@ -54,8 +54,6 @@ class _DeviceInfoState extends State<DeviceInfo> {
       if (characteristic.characteristicUuid ==
           Guid(KeyConstants.startOtaCharacteristicUuid)) {
         startCharacteristic = characteristic;
-      } else if (characteristic.characteristicUuid ==
-          Guid(KeyConstants.stopOtaCharacteristicUuid)) {
         stopCharacteristic = characteristic;
       } else if (characteristic.characteristicUuid ==
           Guid(KeyConstants.uploadOtaCharacteristicUuid)) {

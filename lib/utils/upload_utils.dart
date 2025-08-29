@@ -214,7 +214,7 @@ class UploadUtils {
 
     characteristic.onValueReceived.listen((data) async {
       if (data.isEmpty) return;
-      final ackStatus = (data[2] & 0xFF) | ((data[3] & 0xFF) << 8);
+      final ackStatus = (data[4] & 0xFF) | ((data[5] & 0xFF) << 8);
       log("Start OTA acknowledgment received: $ackStatus");
       if (ackStatus == 0x0000) {
         onAckReceived?.call();
