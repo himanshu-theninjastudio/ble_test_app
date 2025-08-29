@@ -37,7 +37,6 @@ class _DeviceInfoState extends State<DeviceInfo> {
         characteristics.add(characteristic);
       }
     }
-
     setState(() {});
   }
 
@@ -219,7 +218,7 @@ class _DeviceInfoState extends State<DeviceInfo> {
                 ),
                 alignment: Alignment.center,
                 child: Text(
-                  selectedFile != null ? (selectedFileName ?? '') : 'Start OTA',
+                  'Start OTA',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
