@@ -74,6 +74,7 @@ class UploadUtils {
     characteristic.setNotifyValue(true);
 
     // Start with sector 0
+    
     sendSector(
       firmware: firmwareBytes,
       sectorIndex: sectorAckIndex,
