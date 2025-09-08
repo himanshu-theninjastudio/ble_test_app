@@ -13,6 +13,7 @@ class UploadUtils {
   Future<void> updateFirmware({
     required BluetoothCharacteristic characteristic,
     required void Function() onSuccess,
+    required void Function(double) onProgress,
     required void Function(int code) onError,
     required File firmwareFile,
     required int mtu,
@@ -32,6 +33,8 @@ class UploadUtils {
         expectedIndex: sectorAckIndex,
         onSuccess: () async {
           log("✅ Ack Data: ${data.toList()}");
+          final progress = (sectorAckIndex) / totalSectors * 100;
+          onProgress.call(progress);
           sectorAckIndex++;
           if (sectorAckIndex < totalSectors) {
             await sendSector(
@@ -122,12 +125,14 @@ class UploadUtils {
           packet.addByte((sectorIndex >> 8) & 0xFF);
 
           if (isLast) {
-            // Last packet → seq = 0xFF
+            // Last packet
             packet.addByte(0xFF);
             packet.add(chunk);
-            // Append CRC16 little endian
+
+            // Append CRC16
             packet.addByte(crc & 0xFF);
             packet.addByte((crc >> 8) & 0xFF);
+            log("📦 Packet (Last) ${packet.toBytes()}");
           } else {
             // Normal packet
             packet.addByte(sequence & 0xFF);
