@@ -103,8 +103,7 @@ class _DeviceInfoState extends State<DeviceInfo> {
                     ),
                   ),
                 ),
-              if (_controller.version.isNotEmpty &&
-                  _controller.fileDownloadUrl.isNotEmpty) ...[
+              if (true) ...[
                 RichText(
                   text: TextSpan(
                     text:

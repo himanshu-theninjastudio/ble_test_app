@@ -1,6 +1,6 @@
 class ApiConst {
   static const String token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTc1NzMzMjQ1NCwiZXhwIjoxNzU3NDE4ODU0fQ.IoCAg-HH6RMHABsGcUb6Pl8LvnZig9DoV54V5LtizDE';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOjEsInVzZXJUeXBlIjoibWFuYWdlciIsImlhdCI6MTc1NzQxNzc3OSwiZXhwIjoxNzU3NTA0MTc5fQ.1wzYf-i5Fqy1bw34GHldFuZLSd09dGDbFCPpdn3T5_I';
   static const String baseUrl = "https://admin.moanatech.com/api/v1/";
   static String getFirmwareUrl({
     required int page,
